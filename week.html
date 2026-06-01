@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>Week Range (Mon–Sun)</title>
+  <style>
+    #lbl{
+      font-family: monospace;
+      font-size: xx-large;
+      color: #ffffff;
+      padding: 5px;
+      border: 1px solid rgba(255,255,255,0.12);
+      text-align: center;
+      line-height: 1.5;
+    }
+    body{
+      background-color: #000000;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="lbl"></div>
+
+  <script>
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    const today = new Date();
+    const jsDay = today.getDay(); // 0 (Sun) - 6 (Sat)
+    // Convert to ISO weekday where Monday=1..Sunday=7
+    const isoDay = jsDay === 0 ? 7 : jsDay;
+    const monday = new Date(today);
+    monday.setDate(today.getDate() - (isoDay - 1)); // start of week (Monday)
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6); // end of week (Sunday)
+
+    function formatRange(start, end){
+      const startMonth = months[start.getMonth()];
+      const endMonth = months[end.getMonth()];
+      const startDay = start.getDate();
+      const endDay = end.getDate();
+      const year = end.getFullYear();
+      if(startMonth === endMonth){
+        return `${startMonth} ${startDay}-${endDay}, ${year}`;
+      } else {
+        return `${startMonth} ${startDay} - ${endMonth} ${endDay}, ${year}`;
+      }
+    }
+
+    // Example for June 1–7, 2026 (if today is June 1, 2026)
+    document.getElementById('lbl').textContent = formatRange(monday, sunday);
+  </script>
+</body>
+</html>
