@@ -11,7 +11,7 @@
     }
 
     html {
-      background-color: #333;
+      background-color: #191919;
       background-image: linear-gradient(to top, #111, #333);
       background-repeat: no-repeat;
       background-size: 100% 200%;
@@ -126,6 +126,45 @@
       // optional: scroll the new item into view
       li.scrollIntoView({ behavior: 'smooth', inline: 'center' });
     });
+    const STORAGE_KEY = 'notion_book_list_v1';
+
+// load on start
+function loadList() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return;
+  try {
+    const items = JSON.parse(raw);
+    items.forEach(text => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      li.style.writingMode = 'vertical-rl';
+      list.appendChild(li);
+    });
+  } catch (e) { console.error(e); }
+}
+
+// save current list
+function saveList() {
+  const items = Array.from(list.querySelectorAll('li')).map(li => li.textContent);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+}
+
+// wire up
+loadList();
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text) return;
+  const li = document.createElement('li');
+  li.textContent = text;
+  li.style.writingMode = 'vertical-rl';
+  list.appendChild(li);
+  input.value = '';
+  input.focus();
+  saveList();
+  li.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+});
   </script>
 </body>
 </html>
