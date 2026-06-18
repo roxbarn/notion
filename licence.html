@@ -1,0 +1,162 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>License & Usage Terms</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#f6f7fb;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --accent:#2563eb;
+      --chip-bg:#eef2ff;
+      --chip-text:#3730a3;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      padding:18px;
+    }
+    .wrap{
+      max-width:920px;
+      margin:0 auto;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px 16px 14px;
+    }
+
+    .header{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      align-items:baseline;
+      justify-content:space-between;
+      margin-bottom:10px;
+    }
+
+    .title{
+      font-size:18px;
+      font-weight:800;
+      margin:0;
+      letter-spacing:.2px;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:12.5px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
+    }
+
+    .meta .by{
+      display:flex;
+      gap:6px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .dot{
+      width:4px;height:4px;border-radius:50%;
+      background:var(--line);
+      display:inline-block;
+      transform:translateY(-1px);
+    }
+
+    .chip{
+      background:var(--chip-bg);
+      color:var(--chip-text);
+      border-radius:999px;
+      padding:4px 10px;
+      font-weight:650;
+      font-size:12px;
+      border:1px solid #e0e7ff;
+    }
+
+    .section{
+      padding-top:10px;
+      margin-top:10px;
+      border-top:1px solid var(--line);
+    }
+
+    .lead{
+      margin:0 0 8px;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.45;
+    }
+
+    ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--text);
+      font-size:13.5px;
+      line-height:1.5;
+    }
+    li{ margin:6px 0; }
+
+    .section-title{
+      margin:0 0 8px;
+      font-size:13.5px;
+      font-weight:800;
+      color:var(--text);
+    }
+
+    /* Optional: keep layout similar to screenshot proportions */
+    @media (min-width: 700px){
+      .card{ padding:18px 20px 16px; }
+      .title{ font-size:20px; }
+      .lead, ul, .section-title{ font-size:14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <article class="card" aria-label="License and usage terms">
+      <div class="header">
+        <h1 class="title">License &amp; Usage Terms (1)</h1>
+        <div class="meta">
+          <div class="by">
+            <span style="font-weight:700;color:#0b1220;">By</span>
+            <span>duplicating this template, you agree to the following terms:</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="lead">
+        • This template is for personal or professional use within your own business only.
+        <span class="dot" aria-hidden="true"></span>
+        • You may customize or modify this template for your own use.
+        <span class="dot" aria-hidden="true"></span>
+        • You may not copy or recreate this template, or any part of it, to share with others, republish, sell,
+          or use in commercial products or services.
+      </p>
+
+      <div class="section">
+        <p class="lead" style="margin-bottom:10px;">
+          Want to use this template—or any part of modified version of it—in your own products or services?
+        </p>
+
+        <div class="section-title">Commercial License Request</div>
+        <ul>
+          <li><span style="font-weight:700;">Commercial license</span> required for distributing modified versions in products/services.</li>
+          <li>Contact for licensing details as needed.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
