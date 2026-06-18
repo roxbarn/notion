@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +11,6 @@
       --text:#0f172a;
       --muted:#475569;
       --line:#e5e7eb;
-      --accent:#2563eb;
       --chip-bg:#eef2ff;
       --chip-text:#3730a3;
     }
@@ -24,24 +22,20 @@
       color:var(--text);
       padding:18px;
     }
-    .wrap{
-      max-width:920px;
-      margin:0 auto;
-    }
+    .wrap{ max-width:920px; margin:0 auto; }
 
     .card{
       background:var(--card);
       border:1px solid var(--line);
       border-radius:14px;
-      padding:16px 16px 14px;
+      padding:16px;
     }
 
+    /* CHANGE: header is now stacked so the “By …” stays under the h1 */
     .header{
       display:flex;
-      flex-wrap:wrap;
-      gap:10px 14px;
-      align-items:baseline;
-      justify-content:space-between;
+      flex-direction:column;
+      gap:6px;
       margin-bottom:10px;
     }
 
@@ -54,26 +48,8 @@
 
     .meta{
       color:var(--muted);
-      font-size:12.5px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:flex-start;
-    }
-
-    .meta .by{
-      display:flex;
-      gap:6px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .dot{
-      width:4px;height:4px;border-radius:50%;
-      background:var(--line);
-      display:inline-block;
-      transform:translateY(-1px);
+      font-size:13px;
+      line-height:1.4;
     }
 
     .chip{
@@ -84,6 +60,8 @@
       font-weight:650;
       font-size:12px;
       border:1px solid #e0e7ff;
+      display:inline-block;
+      margin-top:2px;
     }
 
     .section{
@@ -92,6 +70,15 @@
       border-top:1px solid var(--line);
     }
 
+    ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--text);
+      font-size:13.5px;
+      line-height:1.55;
+    }
+    li{ margin:6px 0; }
+
     .lead{
       margin:0 0 8px;
       color:var(--muted);
@@ -99,23 +86,20 @@
       line-height:1.45;
     }
 
-    ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--text);
-      font-size:13.5px;
-      line-height:1.5;
-    }
-    li{ margin:6px 0; }
-
     .section-title{
       margin:0 0 8px;
       font-size:13.5px;
-      font-weight:800;
+      font-weight:900;
       color:var(--text);
     }
 
-    /* Optional: keep layout similar to screenshot proportions */
+    a{
+      color:var(--chip-text);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+    a:hover{ opacity:.9; }
+
     @media (min-width: 700px){
       .card{ padding:18px 20px 16px; }
       .title{ font-size:20px; }
@@ -127,33 +111,27 @@
   <div class="wrap">
     <article class="card" aria-label="License and usage terms">
       <div class="header">
-        <h1 class="title">License &amp; Usage Terms (1)</h1>
+        <h1 class="title">License &amp; Usage Terms</h1>
         <div class="meta">
-          <div class="by">
-            <span style="font-weight:700;color:#0b1220;">By</span>
-            <span>duplicating this template, you agree to the following terms:</span>
-          </div>
+          <strong style="color:#0b1220;">By</strong> duplicating this template, you agree to the following terms:
         </div>
       </div>
 
-      <p class="lead">
-        • This template is for personal or professional use within your own business only.
-        <span class="dot" aria-hidden="true"></span>
-        • You may customize or modify this template for your own use.
-        <span class="dot" aria-hidden="true"></span>
-        • You may not copy or recreate this template, or any part of it, to share with others, republish, sell,
-          or use in commercial products or services.
-      </p>
+      <ul aria-label="Personal use terms">
+        <li>This template is for personal or professional use within your own business only.</li>
+        <li>You may customize or modify this template for your own use.</li>
+        <li>You may not copy or recreate this template, or any part of it, to share with others, republish, sell, or use in commercial products or services.</li>
+      </ul>
 
       <div class="section">
-        <p class="lead" style="margin-bottom:10px;">
-          Want to use this template—or any part of modified version of it—in your own products or services?
-        </p>
+        <p class="lead">Want to use this template — or any part of modified version of it — in your own products or services?</p>
 
-        <div class="section-title">Commercial License Request</div>
+        <a class="section-title" href="https://app.notion.com/p/License-Usage-Terms-1-38375c85621780948044dd8ed7f8a948?source=copy_link#d5175c85621783509cf0814b9e9179f6" target="_blank" rel="noopener noreferrer">
+          Commercial License Request
+        </a>
+
         <ul>
-          <li><span style="font-weight:700;">Commercial license</span> required for distributing modified versions in products/services.</li>
-          <li>Contact for licensing details as needed.</li>
+          <li><span style="font-weight:800;">Commercial license</span> required for distributing modified versions in products/services.</li>
         </ul>
       </div>
     </article>
