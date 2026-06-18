@@ -64,22 +64,11 @@
       line-height:1.4;
     }
 
-    .chip{
-      background:var(--chip-bg);
-      color:var(--chip-text);
-      border-radius:999px;
-      padding:4px 10px;
-      font-weight:650;
-      font-size:12px;
-      border:1px solid rgba(99,102,241,.35);
-      display:inline-block;
-      margin-top:2px;
-    }
-
-    .section{
-      padding-top:10px;
-      margin-top:10px;
+    /* Make divider spacing explicit */
+    .divider{
+      border:0;
       border-top:1px solid var(--line);
+      margin:14px 0; /* space before/after */
     }
 
     ul{
@@ -112,10 +101,30 @@
     }
     a:hover{ opacity:.9; }
 
+    /* Footer row */
+    .footer{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:2px;
+    }
+    .footer img{
+      width:18px;
+      height:18px;
+      display:block;
+      border-radius:4px;
+      /* If your logo has a white background, you may want to remove this */
+      background:transparent;
+    }
+
     @media (min-width: 700px){
       .card{ padding:18px 20px 16px; }
       .title{ font-size:20px; }
       .lead, ul, .section-title{ font-size:14px; }
+      .divider{ margin:16px 0; }
+      .footer{ font-size:14px; }
     }
   </style>
 </head>
@@ -124,9 +133,7 @@
     <article class="card" aria-label="License and usage terms">
       <div class="header">
         <h1 class="title">License &amp; Usage Terms</h1>
-        <div class="meta">
-          <strong style="color:var(--text);">By</strong> duplicating this template, you agree to the following terms:
-        </div>
+        <div class="meta">By duplicating this template, you agree to the following terms:</div>
       </div>
 
       <ul aria-label="Personal use terms">
@@ -135,16 +142,20 @@
         <li>You may not copy or recreate this template, or any part of it, to share with others, republish, sell, or use in commercial products or services.</li>
       </ul>
 
-      <div class="section">
-        <p class="lead">Want to use this template — or any part of modified version of it — in your own products or services?</p>
+      <hr class="divider" />
 
-        <a class="section-title" href="https://app.notion.com/p/License-Usage-Terms-1-38375c85621780948044dd8ed7f8a948?source=copy_link#d5175c85621783509cf0814b9e9179f6" target="_blank" rel="noopener noreferrer">
-          Commercial License Request
-        </a>
+      <p class="lead">Want to use this template — or any part of modified version of it — in your own products or services?</p>
 
-        <ul>
-          <li><span style="font-weight:800;">Commercial license</span> required for distributing modified versions in products/services.</li>
-        </ul>
+      <a class="section-title" href="https://app.notion.com/p/License-Usage-Terms-1-38375c85621780948044dd8ed7f8a948?source=copy_link#d5175c85621783509cf0814b9e9179f6" target="_blank" rel="noopener noreferrer">
+        Commercial License Request
+      </a>
+
+      <hr class="divider" />
+
+      <div class="footer">
+        <!-- Put your logo file next to this HTML or in an assets/ folder (see note below). -->
+        <img src="assets/logo.png" alt="Templasense logo" />
+        <span>© <a href="https://app.notion.com/marketplace/profiles/templasense" target="_blank" rel="noopener noreferrer">Templasense</a></span>
       </div>
     </article>
   </div>
