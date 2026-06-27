@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Greeting Message</title>
+  <title>Templasense</title>
   <style>
     #lbl {
       font-family: monospace;
@@ -20,6 +20,11 @@
     #date {
       font-size: 1em; /* same as #lbl */
     }
+    #time {
+      font-size: 0.8em; /* same as #weekday */
+      display: block;
+      margin-top: 0.15em;
+    }
     body {
       background-color: #ffffff;
       margin: 0;
@@ -34,6 +39,7 @@
   <div id="lbl">
     <span id="weekday"></span>
     <span id="date"></span>
+    <span id="time"></span>
   </div>
 
   <script>
@@ -45,8 +51,17 @@
     var monthName = months[today.getMonth()];
     var dateStr = monthName + " " + today.getDate() + ", " + today.getFullYear();
 
+    var hours = now.getHours();
+    var minutes = String(now.getMinutes()).padStart(2, '0');
+    var ampm = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    var timeStr = hours + ":" + minutes + " " + ampm;
+
     document.getElementById('weekday').textContent = dayOfWeek;
     document.getElementById('date').textContent = dateStr;
+    document.getElementById('time').textContent = timeStr;
   </script>
 </body>
 </html>
