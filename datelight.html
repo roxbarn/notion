@@ -42,26 +42,27 @@
     <span id="time"></span>
   </div>
 
-  <script>
-    var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+<script>
+  var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-    var now = new Date();
-    var dayOfWeek = weekday[today.getDay()];
-    var monthName = months[today.getMonth()];
-    var dateStr = monthName + " " + today.getDate() + ", " + today.getFullYear();
+  var now = new Date();
 
-    var hours = now.getHours();
-    var minutes = String(now.getMinutes()).padStart(2, '0');
-    var ampm = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12;
-    hours = hours ? hours : 12;
+  var dayOfWeek = weekday[now.getDay()];
+  var monthName = months[now.getMonth()];
+  var dateStr = monthName + " " + now.getDate() + ", " + now.getFullYear();
 
-    var timeStr = hours + ":" + minutes + " " + ampm;
+  var hours = now.getHours();
+  var minutes = String(now.getMinutes()).padStart(2, '0');
+  var ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
 
-    document.getElementById('weekday').textContent = dayOfWeek;
-    document.getElementById('date').textContent = dateStr;
-    document.getElementById('time').textContent = timeStr;
-  </script>
+  var timeStr = hours + ":" + minutes + " " + ampm;
+
+  document.getElementById('weekday').textContent = dayOfWeek;
+  document.getElementById('date').textContent = dateStr;
+  document.getElementById('time').textContent = timeStr;
+</script>
 </body>
 </html>
